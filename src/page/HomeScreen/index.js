@@ -14,8 +14,26 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#AFEEEE'
     },
+
 });
 
-class  Home extends Component{
+class HomeScreen extends Component {
+    render() {
+        return (
+            <View>
 
+            </View>
+        )
+    }
 }
+const HomeStackNavogator = CreateStackNavogator(
+    {
+        Home: {
+            Screen: HomeScreen,
+        },
+    },
+    {
+        initialRouteName: 'Home',
+    }
+)
+export default HomeStackNavogator; ƒ

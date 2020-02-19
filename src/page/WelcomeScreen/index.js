@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React, { Component } from 'react';
-import { View, Text,StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 
 //开机之后欢迎界面
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
 });
 
 //开机进入欢迎页面1s后跳转至首页
-class Welcome extends Component {
+class WelcomeScreen extends Component {
     componentDidMount() {
         //应用中的每个页面组件会自动提供this.props.navigation ，可以获取到一些方法
         setTimeout(() => { this.props.navigation.navigate('Home') }, 1000);
@@ -41,8 +41,14 @@ class Welcome extends Component {
 const WelcomeStackNavigator = createStackNavigator(
     {
         Welcome: {
-            Screen: Welcome,
+            Screen: WelcomeScreen,
+            navigationOptions: {
+                header: null  //无标题栏
+            }
         }
+    },
+    {
+        initialRouteName:'Welcome'
     }
 );
 
